@@ -2,7 +2,7 @@ import numpy as np
 import os
 
 
-def load_matrix_from_file(file_name):
+def load_matrix(file_name):
     if os.path.exists(file_name):
         matrix = np.loadtxt(file_name,skiprows=1)
         return matrix
@@ -18,13 +18,13 @@ if __name__ == "__main__":
         pass
 
     for size in list_size:
-        matrix1 = load_matrix_from_file(
+        matrix1 = load_matrix(
             f'matrices/matrix1_{size}.txt')
 
-        matrix2 = load_matrix_from_file(
+        matrix2 = load_matrix(
             f'matrices/matrix2_{size}.txt')
 
-        matrix_res = load_matrix_from_file(
+        matrix_res = load_matrix(
             f'results/result_{size}.txt')
 
         if matrix1 is not None and matrix2 is not None and matrix_res is not None:
